@@ -134,8 +134,8 @@ class Database extends PDO {
 	}
 	
 	function insertIngedient($Item) {
-                $sql = 	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description, short, unit)
-									 VALUES (:ingredient_name, :image, :description. :short, :unit)";     
+                $sql = 	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description, short, unit, time)
+									 VALUES (:ingredient_name, :image, :description. :short, :unit, :time)";     
                 $stm = $this->prepare( $sql );
                 return $stm->execute( array (
                             ":ingredient_name" => $Item->ingredient_name,
@@ -143,6 +143,7 @@ class Database extends PDO {
                             ":description" => $Item->description,
 							":short" => $Item->short,
 							":unit" => $Item->unit,
+							":time" => $Item->time
                 ) )
                 ;
 	
@@ -193,4 +194,3 @@ class Database extends PDO {
 	
 	
 }
-
