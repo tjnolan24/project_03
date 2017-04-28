@@ -19,7 +19,7 @@ function makeNewUser($uname, $h, $type, $mail) {
 function setupDefaultUsers() {
 	$users = array ();
 	$i = 0;
-	$users [$i ++] = makeNewUser ( 'cschulze', '$2a$10$BJVO4nnxUVbBeQy4Cy0KpuRevFLeTcjOatFWYKFJhAYVvD5DSGKLS', 'admin', 'cschulze@colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'tjnolan', '$2a$10$xgQosno7w0EJluIceIlHr./BSoVUrs1t2Mw3R5vOC9xLWjkkrS4Vu', 'admin', 'tjnolan@rams.colostate.edu' );
 	$users [$i ++] = makeNewUser ( 'jcollera', '$2a$10$JI9LAwNZirkUaCVhg3nGKOzkyFWXqKOD4Ebo9ImEFuC2u0w0ts9eC', 'admin', 'jakecollera@hotmail.com' );
 	$users [$i ++] = makeNewUser ( 'testAccount', '$2a$10$JDIlTACGE/yyJCo/1CkYp.LRp8MdfklYUiktJzxTCwSuHTYznw9GS', 'customer', 'schulzecb@gmail.com'); /*test account - password is: testing123*/
 	//ct310 accounts
