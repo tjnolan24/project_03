@@ -10,6 +10,7 @@ class Ingredient{
 	public $short;
 	public $unit;
 	public $time;
+	public $price;
     
     
     public static function getIngrdientFromRow($row) {
@@ -22,6 +23,7 @@ class Ingredient{
 		$ingredient->short = $row['short'];
 		$ingredient->unit = $row['unit'];
 		$ingredient->time = $row['time'];
+		$ingredient->price = $row['price'];
         $ingredient->ingredient_id = $row['ingredient_id'];
         
         return $ingredient;
