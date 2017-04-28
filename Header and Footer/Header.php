@@ -10,9 +10,9 @@
 	<?php echo "<title> Ingredients For You: $pageTitle </title>\n" ?>
 	
 	<!-- Add appropriate required meta tags needed for the responsive webpage using bootstrap -->
-	<meta name="author" content="Courtney Schulze and Jake Colleran">
+	<meta name="author" content="Tyler Nolan and Jake Colleran">
 	<meta name="description" content="Project 2: Ingredients For You">
-	<meta name="keywords" content="Courtney Schulze, Jake Colleran, CSU, Colorado State University, CT310, Project 2">
+	<meta name="keywords" content="Tyler Nolan, Jake Colleran, CSU, Colorado State University, CT310, Project 2">
 	
 	<!-- Add required bootstrap CDN links for style sheet and required scripts -->
 		
