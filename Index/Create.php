@@ -13,7 +13,7 @@ $pageTitle = "Create";
 
     <?php if (!$dbh = setupIngredientConnection()) { die; } ?>
 				
-    <?php //dropTableByName ( "ingredient" );
+    <?php dropTableByName ( "ingredient" );
     //dropTableByName ( "comments" ); ?>
             
     <?php
@@ -73,7 +73,9 @@ function createTableIngredient() {
 	$sql = "CREATE TABLE IF NOT EXISTS ingredient (
 			   ingredient_id INTEGER PRIMARY KEY ASC, 
 			   ingredient_name varchar(50), 
-			   image varchar(50), 
+			   image varchar(50),
+			   short varchar(50),
+			   unit varchar(50),
 			   description varchar(500))";
 	createTableGeneric ( $sql );
 }
@@ -107,8 +109,8 @@ function loadIngredientsIntoEmptyDatabase() {
 	include "../source_file/list.php";
 	$ingredients = getIngredientsFromFile ();
 	$comments = array (); // Stores artists and SQL index
-	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description)
-									 VALUES (:ingredient_name, :image, :description)";
+	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description, short, unit)
+									 VALUES (:ingredient_name, :image, :description, :short, :unit)";
 	// This allows caching of statements and optimized queries
 	$ingredient_stm = $dbh->prepare ( $sql_ingredient );
 	foreach ( $ingredients as $ing ) {
@@ -122,6 +124,8 @@ function testedInsertIngredient($ing, $ing_stm) {
 			':ingredient_name' => $ing['Name'],
 			':image' => $ing ['Image'],
 			':description' => $ing ['Description'],
+			':short' => $ing ['Short'],
+			':unit' => $ing ['Unit']
 	) )) {
 		echo '<pre class="bg-danger">';
 		print_r ( $dbh->errorInfo () );
@@ -129,3 +133,4 @@ function testedInsertIngredient($ing, $ing_stm) {
 	}
 }
 ?>
+
