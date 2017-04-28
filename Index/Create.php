@@ -77,6 +77,7 @@ function createTableIngredient() {
 			   short varchar(50),
 			   unit varchar(50),
 			   time varchar(50),
+			   price varchar(50),
 			   description varchar(500))";
 	createTableGeneric ( $sql );
 }
@@ -110,8 +111,8 @@ function loadIngredientsIntoEmptyDatabase() {
 	include "../source_file/list.php";
 	$ingredients = getIngredientsFromFile ();
 	$comments = array (); // Stores artists and SQL index
-	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description, short, unit, time)
-									 VALUES (:ingredient_name, :image, :description, :short, :unit, :time)";
+	$sql_ingredient = "INSERT INTO ingredient (ingredient_name, image, description, short, unit, time, price)
+									 VALUES (:ingredient_name, :image, :description, :short, :unit, :time, :price)";
 	// This allows caching of statements and optimized queries
 	$ingredient_stm = $dbh->prepare ( $sql_ingredient );
 	foreach ( $ingredients as $ing ) {
@@ -127,6 +128,7 @@ function testedInsertIngredient($ing, $ing_stm) {
 			':description' => $ing ['Description'],
 			':short' => $ing ['Short'],
 			':time' => $ing ['Time'],
+			':price' => $ing ['Price'],
 			':unit' => $ing ['Unit']
 	) )) {
 		echo '<pre class="bg-danger">';
