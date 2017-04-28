@@ -9,6 +9,7 @@ class Ingredient{
     public $ingredient_id;
 	public $short;
 	public $unit;
+	public $time;
     
     
     public static function getIngrdientFromRow($row) {
@@ -20,6 +21,7 @@ class Ingredient{
         $ingredient->ip_addr = $row['ip_addr'];
 		$ingredient->short = $row['short'];
 		$ingredient->unit = $row['unit'];
+		$ingredient->time = $row['time'];
         $ingredient->ingredient_id = $row['ingredient_id'];
         
         return $ingredient;
@@ -32,4 +34,3 @@ class Ingredient{
     }
     
 }
-
