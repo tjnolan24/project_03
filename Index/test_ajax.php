@@ -12,6 +12,7 @@
 ?>
 	
 <script>
+
 	$(document).ready(function(){
 		var http = new XMLHttpRequest();
 		http.open("GET", "ajax_ingrimage.php?ing=Wasabi", true);
@@ -27,6 +28,7 @@
 		}
 		http.send(null);
 	});
+	
 </script>
 
 <div class="container-fluid" id="content">
@@ -34,6 +36,8 @@
 	<p align="center">The following image will appear if ajax_ingrimage worked</p>
 	<img id="rand_img" src="" alt="Random Image">
 </div>
+
+<?php include "listing.php"?>
 
 <?php include "../Header and Footer/Footer.php"; ?>
 

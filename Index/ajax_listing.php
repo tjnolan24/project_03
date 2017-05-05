@@ -1,4 +1,4 @@
-l<?php 
+<?php 
 	header ( 'Content-Type: text/json' );
 	header ( "Access-Control-Allow-Origin: *" );
 ?>
@@ -23,3 +23,4 @@ l<?php
 	echo json_encode($json);
 	
 ?>
+

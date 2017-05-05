@@ -59,8 +59,12 @@
 												cell.innerHTML = myObj2[ing][val];
 											}
 										}
+										
 										//add more information
-										var info = "<a href=\"view_ingredient.php?ing=" + myObj2[ing]["name"] + "\">More Info</a>";
+										var stringy = JSON.stringify(myObj2[ing]);
+										stringy = encodeURIComponent(stringy);
+										
+										var info = '<a href="view_ingredient.php?ing=' + stringy + '&url=' + obj["baseURL"] + '">More Info</a>';
 										cell = row.insertCell(3);
 										cell.innerHTML = info;
 									}
@@ -100,7 +104,9 @@
 	}
 </script>
 
-
+<form method="POST" action="" id="pass_post_vars">
+	<input type="hidden" name="url" value="10" />
+</form>
 
 <table class="table table-bordered" id="AllIngredients">
 	<tr>

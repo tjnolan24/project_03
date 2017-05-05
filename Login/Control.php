@@ -1,5 +1,5 @@
 <?php
-$sessiName = "310proj2";
+$sessiName = "310proj3";
 session_name ( $sessiName );
 session_start ();
 $host = $_SERVER ['HTTP_HOST'];
