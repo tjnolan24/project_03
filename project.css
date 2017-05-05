@@ -259,6 +259,19 @@ table#GlobalStatus tr.failed{
 	background-color: #F9F985;
 }
 
+/*========= For dispaying list of ingredients ===========*/
+table#AllIngredients {
+	text-align: center;
+	margin-top: 2em;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
 
-
+table#AllIngredients th{
+	background-color: #75B9BC;
+	padding: 1em;
+	text-align: center;
+}
 
