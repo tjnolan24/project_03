@@ -40,13 +40,16 @@
 										
 										if (this.readyState == 4){
 											if (this.status == 200) {
-												var myObj2 = JSON.parse(this.responseText);
+												var myObj2 = this.responseText;
+												myObj2 = myObj2.replace(/"+/g, ''); myObj2 = myObj2.replace(/\\/g, '');
+												
 												//use in ajax_ingrimage
 												$("#rand_img").attr("src", 'data:image/png;base64,' + myObj2); //change src of image
 											}
 										}	
 									}
 									http2.send(null);
+									
 									/*obtain long description of ingredient*/
 									var http3 = new XMLHttpRequest();
 									var url3   = obj["baseURL"] + "ajax_ingredient.php?ing=" + "<?php echo $jIng['name']; ?>"; 
@@ -57,7 +60,6 @@
 												var myObj3 = JSON.parse(this.responseText);
 												document.getElementById("description").innerHTML = myObj3['desc'];  //set description of ingredient
 												document.getElementById("price").innerHTML = "Price: $" + myObj3['cost'] + " per " + myObj3["unit"];  //set description of ingredient
-												console.log(this.responseText);
 											}
 										}	
 									}
