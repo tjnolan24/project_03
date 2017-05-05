@@ -19,9 +19,7 @@
 		$img = $ing["image"];
 		$encoded_data = base64_encode(file_get_contents("../Ingredient Pages/$img")); 
 		
-		$temp = array($encoded_data);
-		echo json_encode($temp);
-		
+		echo $encoded_data;
 	}
 		
 ?>
