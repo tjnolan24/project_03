@@ -17,6 +17,7 @@
 		<li class="home-link"><a href="../Index/index.php">Home</a></li>
 		<li class="wasabi-link"><a href="../Ingredient Pages/Addngredient.php">Add an Ingredient</a></li>
 		<li class="lemongrass-link"><a href="../AboutUs/about.php">About Us</a></li>
+		<li class="fedr_status-link"><a href="../Index/fedr_status.php">Federation Status</a></li>
 		<li class="capers-link"><a href="../Login/shoppingCart.php">Shopping Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 		<li class="wasabi-link"><a href="../Login/Login.php">Login <span class="glyphicon glyphicon-leaf"></span></a></li>
 	</ul>

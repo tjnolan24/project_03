@@ -22,7 +22,7 @@
     $msg = "Customer '$customer' submitted the following order:\n";
     
     //get items of cart in array
-    $cartItems = $db->getCartItems();
+    $cartItems = $db->getCart();
     
     foreach($cartItems as $item) {
         $msg .= "-$item \n";

@@ -102,10 +102,14 @@ a:hover {
         border-radius: 50%;
         display: block;
         margin-left: auto;
-        margin-right: auto;
-        
-    
+        margin-right: auto;  
 }
+
+.ingredient-text{
+        padding: 30px;
+		text-align: center;
+}
+
 .container-fluid{
 	margin: 0px;
 	padding: 0px;
@@ -148,10 +152,6 @@ a:hover {
         background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Salted_capers.jpg");
         background-size: cover;
         margin-bottom: 10px;
-}
-
-.ingredient-text{
-        padding: 30px;
 }
 
 .credit {
@@ -274,4 +274,29 @@ table#AllIngredients th{
 	padding: 1em;
 	text-align: center;
 }
+
+/* ===== SHOPPING CART ====== */
+
+.table {
+    width: 50%;
+    margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.table th {
+	text-align: center;
+}
+
+table {
+    background-color: beige;
+}
+
+.checkout {
+	text-align: center;
+}
+
+
+
 
