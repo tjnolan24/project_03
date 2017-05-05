@@ -26,7 +26,7 @@
                 <div class="row" style="text-align: center; padding: 10px; margin-bottom: 2px;">
                     <div class="col-xs-12">
                     <h3>
-                        <?php echo "<a href= 'https://www.cs.colostate.edu/~jcollera/project_03-master/Ingredient Pages/DisplayIngredient.php?ing=" . $ing["ingredient_name"] . "'>"; ?>
+                       <?php echo "<a href= 'https://www.cs.colostate.edu/~tjnolan/project_03_v2/Ingredient Pages/DisplayIngredient.php?ing=" . $ing["ingredient_name"] . "'>"; ?>
                        <?php echo $ing["ingredient_name"];?>
                        </a>
                     </h3>
@@ -36,6 +36,10 @@
 		</div>
             <?php }; ?>	
             
+		<div id="other_ingr">
+			<br/><br/><p align="center">If you would like to look at other ingredients from different sites, here they are!</p>
+			<?php include 'listing.php'?>
+		</div>
 	
 	<?php
 		include "../Header and Footer/Footer.php";
