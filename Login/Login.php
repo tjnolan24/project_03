@@ -5,7 +5,7 @@
     include './Support.php';
     
     
-    $users = readUsers();
+    $users = User::readUsers();
     $loginSuccess = false; /*variable for creating comments array*/
 
     if (isset ( $_POST ['user'] )) {
@@ -13,7 +13,7 @@
 	$epw = strip_tags($_POST ['pwd']);
 	$old = $_SESSION ['userName'];
 	if ($new != $old) {
-		if (password_verify($epw, userHashByName($users, $new))) {
+		if (password_verify($epw, User::userHashByName($users, $new))) {
 			$_SESSION ['startTime'] = time ();
 			$_SESSION ['userName'] = $new;
 			$loginSuccess = true;
