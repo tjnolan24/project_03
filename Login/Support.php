@@ -8,7 +8,7 @@ class User {
 	public $type = ''; /*admin or customer*/
 	public $email = ''; /*User's email address*/
 
-function makeNewUser($uname, $h, $type, $mail) {
+public static function makeNewUser($uname, $h, $type, $mail) {
 	$u = new User ();
 	$u->username = $uname;
 	$u->hash = $h;
@@ -27,7 +27,7 @@ public static function setupDefaultUsers() {
 	$users [$i ++] = User::makeNewUser ( 'fred', '$2a$10$Y76zJIpHLeX0QebDWcdxRuFiJJSnMzuco1l.okkSPtdh.t6dRvE.2', 'customer', 'ct310@cs.colostate.edu'); //Password: 3B23E6
 	User::writeUsers ( $users );
 }
-function writeUsers($users) {
+public static function writeUsers($users) {
 	$fh = fopen ( 'users.csv', 'w+' ) or die ( "Can't open file" );
 	fputcsv ( $fh, array_keys ( get_object_vars ( $users [0] ) ) );
 	for($i = 0; $i < count ( $users ); $i ++) {
@@ -54,7 +54,7 @@ public static function readUsers() {
 	fclose ( $fh );
 	return $users;
 }
-function userHashByName($users, $uname) {
+public static function userHashByName($users, $uname) {
 	$res = '';
 	foreach ( $users as $u ) {
 		if ($u->username == $uname) {
@@ -64,7 +64,7 @@ function userHashByName($users, $uname) {
 	return $res;
 }
 
-function isAdmin($user) {
+public static function isAdmin($user) {
     if (isset($_SESSION['userName']) && $_SESSION['userName'] == "Guest") {
         return false;
     }
@@ -76,7 +76,7 @@ function isAdmin($user) {
 
 }
 
-function isCustomer($user) {
+public static function isCustomer($user) {
     if (isset($_SESSION['userName']) && $_SESSION['userName'] == "Guest") {
         return false;
     }
